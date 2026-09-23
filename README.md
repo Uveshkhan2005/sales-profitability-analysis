@@ -1,120 +1,259 @@
-# Sales & Profitability Analysis
+# 📊 Sales & Profitability Analysis
 
-### End-to-End Data Analytics Project | Excel | SQL | PostgreSQL | Power BI
+### End-to-End Data Analytics Project | Python | SQL | PostgreSQL | Power BI
 
-An end-to-end Sales and Profitability Analytics project focused on understanding sales performance, profitability, customer contribution, product performance, regional trends, and business opportunities.
+An end-to-end **Sales and Profitability Analytics** project focused on understanding sales performance, profitability, customer contribution, product performance, regional trends, discount patterns, shipping performance, and business opportunities.
 
-The project combines **Microsoft Excel, SQL, PostgreSQL, and Power BI** to transform sales data into actionable business insights.
+The project transforms transactional sales data into structured business insights using **Python, Pandas, NumPy, SQL, PostgreSQL, and Power BI**.
+
+The project currently includes a completed **Python + PostgreSQL + SQL analysis layer**, with the Power BI dashboard planned as the final business intelligence layer.
 
 ---
 
-# Project Overview
+## 📌 Table of Contents
 
-Sales analytics helps businesses understand where revenue and profit are being generated, which products and regions perform best, and where profitability can be improved.
+- [Project Overview](#-project-overview)
+- [Business Problem](#-business-problem)
+- [Business Objectives](#-business-objectives)
+- [Dataset](#-dataset)
+- [Dataset Structure](#-dataset-structure)
+- [Tools & Technologies](#-tools--technologies)
+- [Analytical Workflow](#-analytical-workflow)
+- [Data Validation](#-data-validation)
+- [Data Cleaning](#-data-cleaning)
+- [Cleaned Dataset](#-cleaned-dataset)
+- [Feature Engineering](#-feature-engineering)
+- [Key Performance Indicators](#-key-performance-indicators)
+- [Sales Analysis](#-sales-analysis)
+- [Discount & Profitability Analysis](#-discount--profitability-analysis)
+- [Category Analysis](#-category-analysis)
+- [Sub-Category Analysis](#-sub-category-analysis)
+- [Regional Analysis](#-regional-analysis)
+- [Customer Analysis](#-customer-analysis)
+- [Product Analysis](#-product-analysis)
+- [Shipping & Ship Mode Analysis](#-shipping--ship-mode-analysis)
+- [Monthly Performance Analysis](#-monthly-performance-analysis)
+- [PostgreSQL & SQL Analysis](#-postgresql--sql-analysis)
+- [Advanced Business Findings](#-advanced-business-findings)
+- [Power BI Dashboard](#-power-bi-dashboard)
+- [Current Business Insights](#-current-business-insights)
+- [Business Recommendations](#-business-recommendations)
+- [Repository Structure](#-repository-structure)
+- [Project Status](#-project-status)
+- [Skills Demonstrated](#-skills-demonstrated)
+- [Analytical Concepts](#-analytical-concepts)
+- [Data & Analytical Disclaimer](#-data--analytical-disclaimer)
+- [Project Objective](#-project-objective)
+- [Project Outcome](#-project-outcome)
+- [Author](#-author)
+- [Connect](#-connect)
 
-This project analyzes sales data across:
+---
 
-- Sales performance
+# 📊 Project Overview
+
+Sales and profitability analytics helps businesses understand where revenue and profit are being generated, which products and categories perform well, where losses occur, and how pricing, discounts, customers, regions, and shipping methods relate to profitability.
+
+This project analyzes transactional sales data across:
+
+- Sales
 - Revenue
 - Profit
+- Profit Margin
+- Orders
+- Customers
 - Products
 - Categories
-- Customers
+- Sub-Categories
 - Regions
 - Discounts
-- Profit margins
-- Time-based trends
+- Ship Modes
+- Shipping Time
+- Monthly Trends
 
 The project follows a complete analytics workflow:
 
 ```text
 Business Problem
-        ↓
+       ↓
+Raw Sales Data
+       ↓
 Data Validation
-        ↓
+       ↓
 Data Cleaning
-        ↓
-Excel Analysis
-        ↓
+       ↓
+Feature Engineering
+       ↓
 KPI Development
-        ↓
-SQL / PostgreSQL Analysis
-        ↓
+       ↓
+Python Analysis
+       ↓
 Profitability Analysis
-        ↓
-Power BI Dashboard
-        ↓
+       ↓
+PostgreSQL
+       ↓
+SQL Business Analysis
+       ↓
 Business Insights
-        ↓
-Recommendations
+       ↓
+Power BI Dashboard
+       ↓
+Final Recommendations
 ```
 
 ---
 
-# Business Problem
+# 🎯 Business Problem
 
-A business needs to understand which products, customers, regions, and categories contribute most to revenue and profit.
+A business needs to understand which products, customers, categories, regions, and sales conditions contribute most to revenue and profit.
 
-This project focuses on answering:
+The project focuses on answering questions such as:
 
-- What are the total sales and profit?
-- Which products generate the highest revenue?
+- What are the total sales and total profit?
+- What is the overall profit margin?
+- Which products generate the highest sales?
 - Which products generate the highest profit?
-- Which categories perform best?
-- Which regions generate the most sales?
-- Which regions generate the most profit?
-- How do discounts affect profitability?
-- Which customers contribute the most revenue?
-- How do sales and profit change over time?
-- Which areas require management attention?
+- Which products generate sales but result in losses?
+- Which categories contribute the most profit?
+- Which sub-categories are loss-making?
+- Which regions generate the most sales and profit?
+- How does discounting relate to profitability?
+- Which customers generate the most sales?
+- Which customers generate the most profit?
+- How many customers are loss-making?
+- Which shipping modes generate the most sales?
+- How does shipping time vary by ship mode?
+- Which months generate the highest sales?
+- Which months generate the highest profit?
+- Which categories have the highest loss rates?
 
 ---
 
-# Business Objectives
+# 🎯 Business Objectives
 
 The project aims to:
 
 - Measure overall sales performance
-- Analyze profitability
-- Identify high-performing products
-- Compare category performance
+- Measure overall profitability
+- Calculate profit margin
+- Analyze order volume
+- Analyze customer contribution
+- Analyze product performance
+- Compare categories and sub-categories
 - Analyze regional performance
-- Understand customer contribution
-- Examine the relationship between discounts and profit
-- Track sales and profit trends
-- Identify opportunities for business improvement
+- Examine discount and profitability relationships
+- Identify loss-making products
+- Identify loss-making customers
+- Analyze shipping performance
+- Analyze monthly sales and profit trends
+- Use PostgreSQL for structured database analysis
+- Use SQL for business-focused analysis
 - Build an interactive Power BI dashboard
+- Translate analytical findings into actionable business insights
 
 ---
 
-# Dataset
+# 📂 Dataset
 
-The project will use a structured sales dataset containing information about orders, products, customers, regions, sales, discounts, and profit.
+## Superstore Sales Dataset
 
-### Expected Dataset Areas
+The project uses a structured **Superstore sales dataset** provided as an Excel `.xls` workbook.
+
+The raw workbook contains the main `Orders` sheet used for the analysis.
+
+### Workbook Sheets
+
+The workbook was inspected before analysis.
+
+The primary analytical sheet is:
 
 ```text
-Order Information
-Product Information
-Customer Information
-Geographic Information
-Sales Information
-Profit Information
-Discount Information
+Orders
 ```
 
-The final dataset and source information will be documented in the repository.
+Additional workbook sheets include:
+
+```text
+People
+Returns
+```
+
+The project analysis is based primarily on the `Orders` data.
 
 ---
 
-# Tools & Technologies
+# 📊 Dataset Overview
 
-## Spreadsheet Analysis
+The actual dataset used in the project contains:
 
-- Microsoft Excel
-- Pivot Tables
-- Pivot Charts
-- Excel Functions
+| Metric | Value |
+|---|---:|
+| Original Records | **10,194** |
+| Original Columns | **21** |
+| Cleaned Analytical Records | **10,194** |
+| Engineered Columns | **29** |
+| Unique Orders | **5,111** |
+| Unique Customers | **804** |
+| Unique Products | **1,862** |
+| Categories | **3** |
+| Sub-Categories | **17** |
+| Regions | **4** |
+| States / Provinces | **59** |
+
+### Data Period
+
+The transaction dataset currently analyzed covers:
+
+```text
+January 2023 → December 2026
+```
+
+This represents **48 monthly periods** in the analytical dataset.
+
+---
+
+# 🧾 Dataset Structure
+
+The original 21 columns include:
+
+| Column | Description |
+|---|---|
+| `Row ID` | Unique row identifier |
+| `Order ID` | Order identifier |
+| `Order Date` | Date of order |
+| `Ship Date` | Date order was shipped |
+| `Ship Mode` | Shipping method |
+| `Customer ID` | Customer identifier |
+| `Customer Name` | Customer name |
+| `Segment` | Customer segment |
+| `Country/Region` | Customer country or region |
+| `City` | Customer city |
+| `State/Province` | State or province |
+| `Postal Code` | Postal code |
+| `Region` | Sales region |
+| `Product ID` | Product identifier |
+| `Category` | Product category |
+| `Sub-Category` | Product sub-category |
+| `Product Name` | Product name |
+| `Sales` | Sales amount |
+| `Quantity` | Quantity sold |
+| `Discount` | Discount proportion |
+| `Profit` | Profit generated |
+
+---
+
+# 🛠 Tools & Technologies
+
+## Programming & Data Analysis
+
+- Python
+- Pandas
+- NumPy
+
+## Data Visualization
+
+- Matplotlib
+- Seaborn
 
 ## Database & SQL
 
@@ -128,6 +267,11 @@ The final dataset and source information will be documented in the repository.
 - DAX
 - Power Query
 
+## Source Data / Spreadsheet
+
+- Microsoft Excel
+- Excel `.xls` workbook
+
 ## Development & Version Control
 
 - Jupyter Notebook
@@ -137,12 +281,12 @@ The final dataset and source information will be documented in the repository.
 
 ---
 
-# Analytical Workflow
+# 🔄 Analytical Workflow
 
 ```text
-Raw Sales Data
+Raw Superstore Data
         ↓
-Data Inspection
+Workbook Inspection
         ↓
 Data Validation
         ↓
@@ -150,314 +294,1027 @@ Data Cleaning
         ↓
 Feature Engineering
         ↓
-Excel Analysis
+Baseline KPIs
         ↓
-KPI Development
+Discount Analysis
         ↓
-SQL / PostgreSQL
+Category Analysis
         ↓
-Profitability Analysis
+Sub-Category Analysis
         ↓
-Power BI
+Regional Analysis
+        ↓
+Customer Analysis
+        ↓
+Product Analysis
+        ↓
+Shipping Analysis
+        ↓
+Monthly Analysis
+        ↓
+PostgreSQL
+        ↓
+SQL Business Analysis
         ↓
 Business Insights
         ↓
-Recommendations
+Power BI
+        ↓
+Final Recommendations
 ```
 
 ---
 
-# Data Validation
+# 🔍 Data Validation
 
-The dataset will be reviewed for:
+The raw dataset was inspected using Python and Pandas before analytical processing.
+
+Validation checks included:
 
 - Missing values
 - Duplicate records
-- Invalid numerical values
-- Incorrect dates
-- Incorrect data types
-- Negative sales or profit values
+- Invalid sales values
+- Invalid quantity values
 - Invalid discount values
-- Inconsistent categories
-- Incomplete customer or product information
+- Negative profit values
+- Date consistency
+- Shipping date consistency
+- Unique business dimensions
+- Data types
 
----
+## Validation Results
 
-# Data Cleaning
+| Check | Result |
+|---|---:|
+| Total Records | **10,194** |
+| Missing Values | **0** |
+| Duplicate Rows | **0** |
+| Sales ≤ 0 | **0** |
+| Quantity ≤ 0 | **0** |
+| Discount < 0 | **0** |
+| Discount > 1 | **0** |
+| Negative Profit Rows | **1,901** |
+| Ship Date Before Order Date | **0** |
 
-The cleaning process will include:
+### Important Profit Validation
 
-- Handling missing values
-- Removing duplicate records where appropriate
-- Standardizing categorical fields
-- Converting date fields
-- Validating sales and profit values
-- Checking discount values
-- Creating required analytical fields
+The dataset contains **1,901 transactions with negative profit**.
 
----
-
-# Feature Engineering
-
-Additional analytical fields may include:
-
-```text
-Revenue
-Profit Margin
-Order Month
-Order Year
-Order Quarter
-Customer Revenue
-Customer Profit
-Product Revenue
-Product Profit
-```
-
-A standard profitability metric will be used:
+Negative profit was **not treated as invalid data** because loss-making transactions are meaningful for a profitability analysis.
 
 ```text
-Profit Margin = Profit / Sales
+Negative Profit ≠ Invalid Data
+```
+
+Instead, these transactions were retained for further profitability analysis.
+
+---
+
+# 🧹 Data Cleaning
+
+Because the validation results showed no duplicate rows and no invalid Sales, Quantity, or Discount values, no aggressive row-level removal was required.
+
+A separate analytical dataframe was created:
+
+```python
+df_clean = df.copy()
+```
+
+## Cleaning & Preparation Steps
+
+### Date Conversion
+
+```python
+df_clean["Order Date"] = pd.to_datetime(
+    df_clean["Order Date"]
+)
+
+df_clean["Ship Date"] = pd.to_datetime(
+    df_clean["Ship Date"]
+)
+```
+
+### Data Integrity
+
+The dataset retained all:
+
+```text
+10,194 records
+```
+
+because:
+
+- No duplicate rows were identified
+- No invalid sales values were identified
+- No invalid quantity values were identified
+- No invalid discount values were identified
+- Negative profit values were retained intentionally
+
+---
+
+# ✅ Cleaned Dataset
+
+The final analytical dataset contains:
+
+```text
+10,194 records
+29 columns
+```
+
+The additional columns were created through feature engineering.
+
+The cleaned analytical file is:
+
+```text
+dataset/superstore_sales_clean.csv
+```
+
+The raw source file remains:
+
+```text
+dataset/superstore_sales_dataset.xls
+```
+
+The raw source is preserved separately to maintain reproducibility.
+
+---
+
+# ⚙️ Feature Engineering
+
+Additional analytical fields were created to support business analysis.
+
+## Date Features
+
+- `Order Year`
+- `Order Month`
+- `Month Name`
+- `Year-Month`
+- `Order Day`
+
+## Operational Features
+
+- `Shipping Days`
+
+Calculated as:
+
+```text
+Shipping Days = Ship Date - Order Date
+```
+
+## Profitability Features
+
+- `Profit Margin`
+
+Calculated as:
+
+```text
+Profit Margin = Profit / Sales × 100
+```
+
+## Discount Features
+
+A categorical `Discount Band` was created:
+
+```text
+No Discount
+Low Discount
+Medium Discount
+High Discount
+```
+
+### Discount Band Logic
+
+```text
+0%                → No Discount
+0%–20%            → Low Discount
+>20%–40%          → Medium Discount
+>40%              → High Discount
 ```
 
 ---
 
-# Key Performance Indicators
+# 📈 Key Performance Indicators
 
-The project will calculate:
+The current Python analysis produced the following baseline KPIs:
 
-| KPI | Description |
-|---|---|
-| Total Sales | Overall revenue generated |
-| Total Profit | Overall profit generated |
-| Profit Margin | Profit relative to sales |
-| Total Orders | Number of orders |
-| Total Customers | Number of customers |
-| Total Quantity | Units sold |
-| Average Order Value | Average sales per order |
-| Average Discount | Average discount applied |
+| KPI | Value |
+|---|---:|
+| Total Sales | **$2,326,534.35** |
+| Total Profit | **$292,296.81** |
+| Total Quantity | **38,654** |
+| Total Orders | **5,111** |
+| Total Customers | **804** |
+| Total Products | **1,862** |
+| Profit Margin | **12.56%** |
+| Average Order Value | **$455.20** |
+| Average Shipping Time | **3.96 days** |
+| Loss-Making Customers | **159** |
 
-These KPIs will form the foundation of the executive dashboard.
+### KPI Definitions
+
+**Total Sales**
+
+Sum of all sales values in the cleaned analytical dataset.
+
+**Total Profit**
+
+Sum of all profit values.
+
+**Profit Margin**
+
+```text
+Profit Margin = Total Profit / Total Sales × 100
+```
+
+**Average Order Value**
+
+```text
+AOV = Total Sales / Unique Orders
+```
+
+**Average Shipping Time**
+
+Average number of days between Order Date and Ship Date.
 
 ---
 
-# Excel Analysis
+# 📊 Sales Analysis
 
-Excel will be used for business-oriented analysis and reporting.
+Sales performance was analyzed across:
 
-### Planned Analysis
+- Orders
+- Customers
+- Products
+- Categories
+- Regions
+- Months
+- Ship Modes
 
-- Sales summary
-- Profit summary
-- Monthly sales trends
-- Category analysis
-- Product analysis
-- Regional analysis
-- Customer analysis
-- Pivot-based reporting
-- Profit margin analysis
-- Discount analysis
+The project emphasizes the difference between:
+
+```text
+Sales
+vs.
+Profit
+```
+
+because higher sales do not necessarily imply higher profitability.
 
 ---
 
-# SQL & PostgreSQL Analysis
+# 💸 Discount & Profitability Analysis
 
-The cleaned dataset will be loaded into PostgreSQL for structured business analysis.
+Discount analysis is one of the main components of this project.
 
-### Planned SQL Analysis
+## Discount Band Results
 
-## Sales Analysis
+| Discount Band | Transactions | Loss Transactions | Sales | Profit | Profit Margin | Loss Rate |
+|---|---:|---:|---:|---:|---:|---:|
+| No Discount | 4,925 | 0 | $1,105,323.79 | $326,718.05 | **29.56%** | **0.00%** |
+| Low Discount | 3,854 | 531 | $856,450.31 | $101,598.88 | **11.86%** | **13.78%** |
+| Medium Discount | 464 | 419 | $235,465.36 | -$35,991.06 | **-15.29%** | **90.30%** |
+| High Discount | 951 | 951 | $129,294.98 | -$100,029.94 | **-77.37%** | **100.00%** |
 
-- Total sales
-- Monthly sales
-- Yearly sales
-- Order volume
-- Average order value
+### Observed Pattern
 
-## Profitability Analysis
+Within this dataset:
 
-- Total profit
+```text
+Discount increases
+        ↓
+Profitability decreases
+```
+
+Medium and high discount bands show negative overall profit.
+
+The high-discount band contains:
+
+```text
+951 transactions
+951 loss-making transactions
+100% loss rate
+```
+
+This is an observed association within the analyzed dataset and should not automatically be interpreted as proof of causation.
+
+---
+
+# 📊 Exact Discount Analysis
+
+The analysis also examined profitability at individual discount levels.
+
+Observed results include:
+
+| Discount | Profit Margin |
+|---:|---:|
+| 0.00 | **29.56%** |
+| 0.10 | **16.56%** |
+| 0.15 | **5.15%** |
+| 0.20 | **11.77%** |
+| 0.30 | **-10.06%** |
+| 0.32 | **-16.50%** |
+| 0.40 | **-19.82%** |
+| 0.45 | **-45.45%** |
+| 0.50 | **-34.80%** |
+| 0.60 | **-86.75%** |
+| 0.70 | **-98.76%** |
+| 0.80 | **-180.01%** |
+
+The individual discount-level results reinforce the broader discount-band analysis.
+
+---
+
+# 🏷️ Category Analysis
+
+The dataset contains three main categories.
+
+## Category Performance
+
+| Category | Orders | Sales | Profit | Profit Margin |
+|---|---:|---:|---:|---:|
+| Technology | 1,560 | $839,893.35 | $146,543.85 | **17.45%** |
+| Office Supplies | 3,812 | $731,893.23 | $126,022.27 | **17.22%** |
+| Furniture | 1,819 | $754,747.86 | $19,729.81 | **2.61%** |
+
+### Observed Pattern
+
+Furniture generates substantial sales but has a considerably lower profit margin than Technology and Office Supplies.
+
+---
+
+# 📦 Sub-Category Analysis
+
+The dataset contains 17 sub-categories.
+
+## Highest Profit Sub-Categories
+
+Examples include:
+
+| Sub-Category | Profit Margin |
+|---|---:|
+| Copiers | **37.21%** |
+| Paper | **43.39%** |
+| Envelopes | **42.28%** |
+| Labels | **43.90%** |
+| Accessories | **25.05%** |
+
+## Loss-Making Sub-Categories
+
+| Sub-Category | Sales | Profit | Profit Margin |
+|---|---:|---:|---:|
+| Tables | $208,020.28 | **-$17,753.33** | **-8.53%** |
+| Bookcases | $115,361.24 | **-$3,632.08** | **-3.15%** |
+| Supplies | $46,725.48 | **-$1,171.40** | **-2.51%** |
+
+These sub-categories are important areas for further profitability investigation.
+
+---
+
+# 🌎 Regional Analysis
+
+Regional performance was analyzed across four regions.
+
+| Region | Orders | Sales | Profit | Profit Margin |
+|---|---:|---:|---:|---:|
+| West | 1,635 | $739,813.70 | $110,798.54 | **14.98%** |
+| East | 1,475 | $691,828.22 | $94,882.94 | **13.71%** |
+| South | 822 | $391,721.90 | $46,749.38 | **11.93%** |
+| Central | 1,179 | $503,170.62 | $39,865.07 | **7.92%** |
+
+### Observed Pattern
+
+The Central region has the lowest overall profit margin among the four regions in the current dataset.
+
+---
+
+# 👥 Customer Analysis
+
+Customer-level analysis was performed using:
+
+- Customer ID
+- Customer Name
+- Orders
+- Sales
+- Profit
+- Quantity
+- Profit Margin
+
+## Top Customers by Profit
+
+Examples from the analysis include:
+
+| Customer | Orders | Sales | Profit | Profit Margin |
+|---|---:|---:|---:|---:|
+| Tamara Chand | 5 | $19,052.22 | **$8,981.32** | 47.14% |
+| Raymond Buch | 6 | $15,117.35 | **$6,976.09** | 46.15% |
+| Sanjit Chand | 9 | $14,142.34 | **$5,757.42** | 40.71% |
+| Hunter Lopez | 6 | $12,873.30 | **$5,622.43** | 43.68% |
+| Adrian Barton | 10 | $14,473.57 | **$5,444.81** | 37.62% |
+
+---
+
+# 🔴 Loss-Making Customers
+
+A total of:
+
+```text
+159 customers
+```
+
+have negative total profit in the current customer-level analysis.
+
+Examples include customers with positive sales but negative overall profit.
+
+| Customer | Sales | Profit | Profit Margin |
+|---|---:|---:|---:|
+| Cindy Stewart | $5,690.07 | **-$6,626.37** | -116.45% |
+| Grant Thornton | $9,351.20 | **-$4,108.66** | -43.94% |
+| Luke Foster | $3,930.52 | **-$3,583.97** | -91.18% |
+| Sharelle Roach | $3,233.48 | **-$3,333.91** | -103.11% |
+| Henry Goldwyn | $3,247.65 | **-$2,797.96** | -86.15% |
+
+This analysis demonstrates that:
+
+```text
+Positive Sales
+        ≠
+Positive Profit
+```
+
+---
+
+# 📦 Product Analysis
+
+Product-level analysis was performed using:
+
+- Product ID
+- Product Name
+- Orders
+- Sales
+- Profit
+- Quantity
+- Profit Margin
+
+---
+
+# 🏆 Highest-Profit Products
+
+Examples of the highest-profit products include:
+
+| Product | Sales | Profit | Profit Margin |
+|---|---:|---:|---:|
+| Canon imageCLASS 2200 Advanced Copier | $61,599.83 | **$25,199.94** | 40.91% |
+| Fellowes PB500 Electric Punch | $27,453.38 | **$7,753.06** | 28.24% |
+| Hewlett Packard LaserJet 3310 Copier | $18,839.68 | **$6,983.89** | 37.07% |
+| Canon PC1060 Personal Laser Copier | $11,619.83 | **$4,570.94** | 39.34% |
+| HP Designjet T520 Inkjet Large Format Printer | $18,374.90 | **$4,094.98** | 22.29% |
+
+---
+
+# 🔻 Lowest-Profit Products
+
+Examples include:
+
+| Product | Sales | Profit | Profit Margin |
+|---|---:|---:|---:|
+| Cubify CubeX 3D Printer Double Head Print | $11,099.96 | **-$8,879.97** | -80.00% |
+| Lexmark MX611dh Monochrome Laser Printer | $16,829.90 | **-$4,589.97** | -27.27% |
+| Cubify CubeX 3D Printer Triple Head Print | $7,999.98 | **-$3,839.99** | -48.00% |
+| Chromcraft Bull-Nose Wood Oval Conference Tables & Bases | $9,917.64 | **-$2,876.11** | -29.00% |
+| Bush Advantage Collection Racetrack Conference Table | $9,544.72 | **-$1,934.40** | -20.27% |
+
+---
+
+# ⚠️ High-Sales / Loss-Making Products
+
+The analysis also identified products that generate meaningful sales but negative profit.
+
+One example is:
+
+```text
+Cisco TelePresence System EX90
+
+Sales:  $22,638.48
+Profit: -$1,811.08
+Margin: -8.00%
+```
+
+This analysis helps identify products where sales volume alone does not represent financial performance.
+
+---
+
+# 🚚 Shipping & Ship Mode Analysis
+
+Shipping performance was analyzed using:
+
+- Ship Mode
+- Orders
+- Sales
+- Profit
+- Average Shipping Days
+- Profit Margin
+
+## Ship Mode Performance
+
+| Ship Mode | Orders | Sales | Profit | Avg Shipping Days | Profit Margin |
+|---|---:|---:|---:|---:|---:|
+| Standard Class | 3,068 | $1,378,840.80 | $168,160.94 | 5.00 | 12.20% |
+| Second Class | 982 | $466,670.96 | $58,961.71 | 3.24 | 12.63% |
+| First Class | 795 | $351,750.73 | $49,012.55 | 2.18 | 13.93% |
+| Same Day | 266 | $129,271.95 | $16,160.73 | 0.04 | 12.50% |
+
+## Overall Shipping Time
+
+```text
+Average Shipping Time ≈ 3.96 days
+```
+
+---
+
+# 📅 Monthly Performance Analysis
+
+Monthly sales and profit were analyzed across **48 monthly periods**.
+
+## Loss-Making Months
+
+Only two monthly periods produced negative overall profit:
+
+| Month | Sales | Profit | Profit Margin |
+|---|---:|---:|---:|
+| 2024-01 | $18,461.92 | **-$3,189.77** | -17.28% |
+| 2023-07 | $33,946.37 | **-$841.48** | -2.48% |
+
+---
+
+# 📈 Highest-Sales Months
+
+| Month | Sales | Profit | Profit Margin |
+|---|---:|---:|---:|
+| 2026-11 | $118,454.49 | $9,692.07 | 8.18% |
+| 2025-12 | $97,502.29 | $17,926.26 | 18.39% |
+| 2026-09 | $88,064.54 | $11,050.71 | 12.55% |
+| 2026-12 | $85,175.01 | $8,655.76 | 10.16% |
+| 2026-10 | $83,474.82 | $10,670.58 | 12.78% |
+
+---
+
+# 💰 Highest-Profit Months
+
+The highest observed monthly profit was:
+
+```text
+2025-12 → $17,926.26
+```
+
+Other high-profit months include:
+
+```text
+2025-10 → $16,256.91
+2026-03 → $15,013.05
+2024-11 → $12,474.75
+2026-09 → $11,050.71
+```
+
+This demonstrates that:
+
+```text
+Highest Sales Month
+        ≠
+Highest Profit Month
+```
+
+---
+
+# 🔴 Category Loss-Rate Analysis
+
+Transaction-level loss rates were also analyzed by category.
+
+| Category | Transactions | Loss Transactions | Loss Rate | Profit Margin |
+|---|---:|---:|---:|---:|
+| Furniture | 2,201 | 732 | **33.26%** | 2.61% |
+| Office Supplies | 6,128 | 898 | **14.65%** | 17.22% |
+| Technology | 1,865 | 271 | **14.53%** | 17.45% |
+
+Furniture shows the highest transaction-level loss rate in the current dataset.
+
+---
+
+# 🐘 PostgreSQL & SQL Analysis
+
+The cleaned dataset has been loaded into PostgreSQL for structured business analysis.
+
+## Database
+
+```text
+sales_profitability_db
+```
+
+## Main Table
+
+```text
+sales_profitability
+```
+
+The PostgreSQL table contains the cleaned transaction-level dataset and engineered analytical fields.
+
+---
+
+# 🧮 PostgreSQL Data Reconciliation
+
+The Python and PostgreSQL pipelines were compared using:
+
+- Record count
+- Unique order count
+- Unique customer count
+- Unique product count
+- Quantity
+- Sales
+- Profit
 - Profit margin
-- Profit by category
-- Profit by region
-- Profit by product
 
-## Customer Analysis
+## Reconciled Structural Metrics
 
-- Sales by customer
-- Profit by customer
-- Top customers
-- Customer contribution
+| Metric | Python | PostgreSQL |
+|---|---:|---:|
+| Records | 10,194 | 10,194 |
+| Orders | 5,111 | 5,111 |
+| Customers | 804 | 804 |
+| Products | 1,862 | 1,862 |
+| Quantity | 38,654 | 38,654 |
 
-## Product Analysis
+The structural metrics reconcile exactly.
 
-- Top products by sales
-- Top products by profit
-- Low-performing products
-- Product contribution
+## Monetary Precision Difference
 
-## Discount Analysis
+Python baseline:
 
-- Sales by discount level
-- Profit by discount level
-- Discount vs. profitability
+```text
+Sales  = $2,326,534.35
+Profit = $292,296.81
+```
+
+PostgreSQL:
+
+```text
+Sales  = $2,326,534.44
+Profit = $292,295.93
+```
+
+The PostgreSQL table stores Sales and Profit using:
+
+```text
+NUMERIC(14,2)
+```
+
+which rounds values to two decimal places at the row level. This can produce small cumulative differences compared with the original Python floating-point calculations.
+
+The differences are:
+
+```text
+Sales  → $0.09
+Profit → $0.88
+```
+
+The main structural counts remain fully consistent.
 
 ---
 
-# Power BI Dashboard
+# 🧮 Completed SQL Analysis
 
-The final Power BI report will contain three analytical pages.
+The SQL analysis includes:
+
+- Overall business KPIs
+- Discount profitability
+- Discount loss rate
+- Category performance
+- Sub-category performance
+- Regional performance
+- Ship Mode performance
+- Customer profitability
+- Loss-making customers
+- Product profitability
+- Loss-making products
+- High-sales / loss-making products
+- Monthly sales and profit
+- Loss-making months
+- Highest-sales months
+- Highest-profit months
+- Category loss-rate analysis
 
 ---
+
+# 📁 SQL File
+
+All PostgreSQL analysis queries are stored in:
+
+```text
+sql/sales_profitability_analysis.sql
+```
+
+The SQL file is organized into business-analysis sections:
+
+```text
+1. Database Validation
+2. Overall Business KPIs
+3. Discount & Profitability Analysis
+4. Category Analysis
+5. Sub-Category Analysis
+6. Regional Analysis
+7. Ship Mode Analysis
+8. Customer Analysis
+9. Product Analysis
+10. Loss-Making Analysis
+11. Monthly Sales & Profit Analysis
+12. Highest-Sales Months
+13. Highest-Profit Months
+14. Category Loss-Rate Analysis
+15. Advanced Business Analysis
+```
+
+---
+
+# 📊 Power BI Dashboard
+
+Power BI is the final business intelligence layer of the project.
+
+The Power BI dashboard is planned after completion of the Python and SQL analysis stages.
+
+The dashboard will use the completed analytical dataset and SQL findings to create an interactive business report.
+
+---
+
+# 📄 Planned Power BI Pages
 
 ## Page 1 — Executive Sales Overview
 
 ### Purpose
 
-Provide a high-level view of sales and profitability performance.
+Provide a high-level overview of sales and profitability performance.
 
-### KPIs
+### Planned KPIs
 
 - Total Sales
 - Total Profit
 - Profit Margin
 - Total Orders
 - Total Customers
+- Total Quantity
+- Average Order Value
 
-### Visuals
+### Planned Visuals
 
 - Monthly Sales Trend
 - Monthly Profit Trend
 - Sales by Category
 - Profit by Category
 - Sales by Region
+- KPI Cards
 
 ---
 
-## Page 2 — Product & Category Performance
+## Page 2 — Product & Profitability Analysis
 
 ### Purpose
 
-Analyze which products and categories contribute most to sales and profit.
+Analyze product and category profitability.
 
-### Analysis
+### Planned Visuals
 
 - Top Products by Sales
 - Top Products by Profit
-- Category Sales
-- Category Profit
-- Product Profit Margin
-- Product Contribution
+- Loss-Making Products
+- Profit by Category
+- Profit by Sub-Category
+- Discount vs Profit
+- Profit Margin by Product
 
 ---
 
-## Page 3 — Regional & Profitability Analysis
+## Page 3 — Customer & Regional Analysis
 
 ### Purpose
 
-Understand regional performance and profitability drivers.
+Understand customer contribution and geographic performance.
 
-### Analysis
+### Planned Visuals
 
+- Customer Sales
+- Customer Profit
+- Loss-Making Customers
 - Sales by Region
 - Profit by Region
-- Customer Contribution
-- Discount vs. Profit
 - Regional Profit Margin
-- Low-performing segments
+- Ship Mode Performance
+- Shipping Time
 
 ---
 
-# Business Questions
+# 💡 Current Business Insights
 
-The final analysis will answer questions such as:
+The completed Python and SQL analysis has identified several important patterns.
+
+## 1. Overall profitability
+
+The current dataset contains:
 
 ```text
-Which products generate the highest revenue?
-
-Which products generate the highest profit?
-
-Which categories perform best?
-
-Which regions contribute the most sales?
-
-Which regions contribute the most profit?
-
-Which customers generate the most value?
-
-How do discounts affect profitability?
-
-Which segments have low profit margins?
-
-Where should management focus improvement efforts?
+$2.33M Sales
+$292.30K Profit
+12.56% Profit Margin
 ```
 
 ---
 
-# Business Insights
+## 2. Discounts are strongly associated with lower profitability
 
-The analysis will be used to identify:
-
-- High-performing products
-- Low-performing products
-- Profitable categories
-- Weak categories
-- Strong and weak regions
-- High-value customers
-- Discount-related profitability patterns
-- Revenue and profit trends
-- Opportunities to improve margins
-
----
-
-# Business Recommendations
-
-Recommendations will be based on the final analysis and may include:
-
-### Product Strategy
-
-Prioritize products with strong revenue and profitability while reviewing weak-performing products.
-
-### Pricing & Discount Strategy
-
-Evaluate discount levels that reduce profit margins and identify opportunities for better pricing decisions.
-
-### Regional Strategy
-
-Identify high-performing regions for expansion and investigate underperforming regions.
-
-### Customer Strategy
-
-Focus retention and relationship-building efforts on high-value customers.
-
-### Profitability Strategy
-
-Prioritize decisions based on both revenue generation and profit contribution rather than sales alone.
-
----
-
-# Dashboard Preview
-
-Final Power BI screenshots will be added after dashboard development.
-
-Recommended files:
+The current data shows:
 
 ```text
-visuals/
-├── dashboard_overview.png
-├── dashboard_product_category.png
-└── dashboard_regional_profitability.png
+No Discount     → 29.56% margin
+Low Discount    → 11.86%
+Medium Discount → -15.29%
+High Discount   → -77.37%
+```
+
+Higher discount bands also show substantially higher transaction-level loss rates.
+
+---
+
+## 3. Furniture has a relatively low profit margin
+
+Furniture generates approximately:
+
+```text
+$754.75K Sales
+$19.73K Profit
+2.61% Profit Margin
+```
+
+compared with approximately:
+
+```text
+Technology
+$839.89K Sales
+$146.54K Profit
+17.45% Margin
 ```
 
 ---
 
-# Repository Structure
+## 4. Tables are the largest loss-making sub-category by total profit
+
+Tables generate approximately:
+
+```text
+$208.02K Sales
+-$17.75K Profit
+-8.53% Margin
+```
+
+---
+
+## 5. Furniture has the highest transaction-level loss rate
+
+Furniture:
+
+```text
+2,201 transactions
+732 loss-making transactions
+33.26% loss rate
+```
+
+---
+
+## 6. 159 customers are loss-making
+
+The customer-level analysis identifies:
+
+```text
+159 loss-making customers
+```
+
+This demonstrates the importance of evaluating customer profitability instead of using sales alone.
+
+---
+
+## 7. High sales do not always imply high profit
+
+Several products generate positive sales but negative overall profit.
+
+This pattern also appears at the customer level.
+
+Therefore, the project evaluates:
+
+```text
+Sales
++
+Profit
++
+Profit Margin
+```
+
+rather than revenue alone.
+
+---
+
+## 8. The West region has the highest observed profit margin
+
+The current regional results show:
+
+```text
+West → 14.98%
+East → 13.71%
+South → 11.93%
+Central → 7.92%
+```
+
+---
+
+## 9. Standard Class is the most frequently used shipping mode
+
+Standard Class accounts for:
+
+```text
+3,068 unique orders
+```
+
+within the current analysis.
+
+Its average shipping time is approximately:
+
+```text
+5.00 days
+```
+
+---
+
+## 10. Monthly sales and monthly profit peaks are different
+
+The highest observed monthly sales occurred in:
+
+```text
+2026-11
+$118,454.49
+```
+
+The highest observed monthly profit occurred in:
+
+```text
+2025-12
+$17,926.26
+```
+
+---
+
+# 🎯 Business Recommendations
+
+Final recommendations will be refined after Power BI dashboard development.
+
+Based on the current analysis, the main business areas requiring further investigation include:
+
+## Pricing & Discount Strategy
+
+Review high and medium discount levels because these bands show substantially lower profitability and higher loss rates in the analyzed data.
+
+## Product Profitability
+
+Investigate loss-making products, particularly products with meaningful sales but negative profit.
+
+## Sub-Category Profitability
+
+Further investigate:
+
+- Tables
+- Bookcases
+- Supplies
+
+because they have negative overall profit in the current dataset.
+
+## Customer Profitability
+
+Review the 159 loss-making customers to understand whether their negative profitability is associated with discounts, product mix, order patterns, or other transaction characteristics.
+
+## Regional Performance
+
+Investigate the lower profitability observed in the Central region relative to the other regions.
+
+## Shipping Performance
+
+Compare shipping methods using both delivery time and profitability rather than order volume alone.
+
+---
+
+# 📁 Repository Structure
 
 ```text
 sales-profitability-analysis/
 │
 ├── dataset/
+│   ├── superstore_sales_dataset.xls
+│   └── superstore_sales_clean.csv
 │
 ├── notebooks/
+│   └── sales_profitability_analysis.ipynb
 │
 ├── sql/
 │   └── sales_profitability_analysis.sql
@@ -469,83 +1326,163 @@ sales-profitability-analysis/
 ├── report/
 │
 ├── .gitignore
+│
 └── README.md
 ```
 
 ---
 
-# Project Status
+# 📌 Project Status
 
 | Component | Status |
 |---|:---:|
 | Repository Setup | ✅ Completed |
-| Dataset Preparation | ⏳ Pending |
-| Data Validation | ⏳ Pending |
-| Data Cleaning | ⏳ Pending |
-| Excel Analysis | ⏳ Pending |
-| KPI Development | ⏳ Pending |
-| SQL / PostgreSQL | ⏳ Pending |
-| Profitability Analysis | ⏳ Pending |
+| GitHub Repository | ✅ Completed |
+| Dataset Preparation | ✅ Completed |
+| Raw Dataset Added | ✅ Completed |
+| Python Notebook | ✅ Completed |
+| Data Validation | ✅ Completed |
+| Data Cleaning | ✅ Completed |
+| Feature Engineering | ✅ Completed |
+| Baseline KPI Analysis | ✅ Completed |
+| Discount Analysis | ✅ Completed |
+| Discount Loss-Rate Analysis | ✅ Completed |
+| Category Analysis | ✅ Completed |
+| Sub-Category Analysis | ✅ Completed |
+| Regional Analysis | ✅ Completed |
+| Customer Analysis | ✅ Completed |
+| Loss-Making Customer Analysis | ✅ Completed |
+| Product Analysis | ✅ Completed |
+| Loss-Making Product Analysis | ✅ Completed |
+| Shipping Analysis | ✅ Completed |
+| Ship Mode Analysis | ✅ Completed |
+| Monthly Sales Analysis | ✅ Completed |
+| Monthly Profit Analysis | ✅ Completed |
+| PostgreSQL Database | ✅ Completed |
+| PostgreSQL Data Import | ✅ Completed |
+| SQL KPI Analysis | ✅ Completed |
+| SQL Discount Analysis | ✅ Completed |
+| SQL Category Analysis | ✅ Completed |
+| SQL Sub-Category Analysis | ✅ Completed |
+| SQL Regional Analysis | ✅ Completed |
+| SQL Ship Mode Analysis | ✅ Completed |
+| SQL Customer Analysis | ✅ Completed |
+| SQL Product Analysis | ✅ Completed |
+| SQL Monthly Analysis | ✅ Completed |
+| SQL Advanced Analysis | ✅ Completed |
+| Python / PostgreSQL Structural Reconciliation | ✅ Completed |
+| Excel Analysis Layer | ⏳ Pending |
+| Power BI Data Model | ⏳ Pending |
 | Power BI Dashboard | ⏳ Pending |
-| Business Insights | ⏳ Pending |
+| Dashboard Screenshots | ⏳ Pending |
+| Final Business Insights | 🔄 In Progress |
+| Final Recommendations | ⏳ Pending |
 | Final Documentation | ⏳ Pending |
 
 ---
 
-# Skills Demonstrated
+# 🧠 Skills Demonstrated
 
-## Data Analysis
+## Python
 
-- Data Cleaning
-- Data Validation
-- KPI Development
-- Sales Analysis
-- Profitability Analysis
-- Customer Analysis
-- Product Analysis
-- Regional Analysis
+- Python
+- Pandas
+- NumPy
+- DataFrame manipulation
+- GroupBy analysis
+- Data cleaning
+- Data validation
+- Feature engineering
+- KPI calculation
+- Aggregation
+- Business analysis
 
-## Spreadsheet Analysis
+## Data Visualization
 
-- Microsoft Excel
-- Pivot Tables
-- Pivot Charts
-- Business Reporting
+- Matplotlib
+- Seaborn
+- Scatter plots
+- Trend analysis
+- Profitability visualization
+- Category comparison
+- Product comparison
 
-## SQL & Database
+## SQL & PostgreSQL
 
 - SQL
 - PostgreSQL
 - pgAdmin
+- SELECT
+- WHERE
+- GROUP BY
+- HAVING
+- ORDER BY
+- COUNT
+- COUNT DISTINCT
+- SUM
+- ROUND
+- Aggregate functions
+- FILTER
+- Common Table Expressions
+- Window functions
+- Business KPI analysis
+
+## Business Analysis
+
+- Sales analysis
+- Profit analysis
+- Profit margin analysis
+- Discount analysis
+- Customer profitability
+- Product profitability
+- Regional analysis
+- Shipping analysis
+- Monthly performance analysis
+- Loss analysis
 
 ## Business Intelligence
 
 - Power BI
 - DAX
 - Power Query
-- Dashboard Development
+- Data modeling
+- Dashboard development
+- Business reporting
 
-## Development Tools
+## Development & Version Control
 
 - Jupyter Notebook
 - VS Code
 - Git
 - GitHub
+- Repository organization
+- Project documentation
 
 ---
 
-# Analytical Concepts
+# 📚 Analytical Concepts
 
 This project applies:
 
 - Descriptive Analytics
 - Exploratory Data Analysis
+- Data Cleaning
+- Data Validation
+- Feature Engineering
 - KPI Analysis
 - Sales Analytics
+- Revenue Analysis
 - Profitability Analysis
-- Customer Analysis
-- Product Performance Analysis
+- Profit Margin Analysis
+- Discount Analysis
+- Customer Analytics
+- Product Analytics
+- Category Analysis
+- Sub-Category Analysis
 - Regional Analysis
+- Shipping Analysis
+- Time-Series / Monthly Trend Analysis
+- Loss-Making Analysis
 - Business Intelligence
 - Data Visualization
 - Data Storytelling
@@ -553,59 +1490,123 @@ This project applies:
 
 ---
 
-# Analytical Disclaimer
+# ⚠️ Data & Analytical Disclaimer
 
-The findings and recommendations in this project will be based on the analyzed sales dataset.
+The raw dataset is preserved separately from the cleaned analytical dataset to maintain reproducibility.
 
-Observed relationships within the data should not automatically be interpreted as causal relationships.
+No duplicate records were identified during validation.
 
-Business recommendations should be validated with additional business context and experimentation before implementation.
+No invalid Sales, Quantity, or Discount values were identified in the validation stage.
+
+Negative profit transactions were intentionally retained because they are meaningful for profitability analysis.
+
+The cleaned analytical dataset contains the same 10,194 transaction records as the source dataset, with additional engineered analytical columns.
+
+Discount and profitability relationships reported in this project are **observed relationships within the analyzed dataset** and should not automatically be interpreted as causal relationships.
+
+The customer, product, category, and regional findings represent descriptive analysis of the available data.
+
+Business recommendations should be validated using additional business context, operational information, and experimentation before implementation.
 
 ---
 
-# Project Objective
+# 🎯 Project Objective
 
-The objective of this project is to demonstrate a practical **Sales and Business Analytics workflow** using Excel, SQL, PostgreSQL, and Power BI.
+The objective of this project is to demonstrate a practical **Sales and Business Analytics workflow** using Python, SQL, PostgreSQL, and Power BI.
 
 ```text
 Raw Sales Data
         ↓
+Data Validation
+        ↓
 Data Cleaning
         ↓
-Excel Analysis
+Feature Engineering
         ↓
-KPI Development
-        ↓
-SQL / PostgreSQL
+Python Analysis
         ↓
 Profitability Analysis
         ↓
-Power BI
+PostgreSQL
+        ↓
+SQL Business Analysis
         ↓
 Business Insights
+        ↓
+Power BI
         ↓
 Business Recommendations
 ```
 
+The project demonstrates how transaction-level data can be transformed into structured analytical information and business-oriented insights.
+
 ---
 
-# Project Outcome
+# 📌 Project Outcome
 
-This project demonstrates how a Data Analyst can:
+The completed analytical work demonstrates the ability to:
 
+- Inspect and validate real-world sales data
+- Perform data-quality checks
+- Prepare an analytical dataset
+- Engineer useful business features
+- Calculate business KPIs
 - Analyze sales performance
-- Measure profitability
-- Identify business trends
-- Compare products and categories
+- Analyze profitability
+- Investigate discount patterns
+- Analyze categories and sub-categories
+- Analyze products
+- Analyze customers
 - Analyze regional performance
-- Evaluate customer contribution
-- Investigate discount impact
-- Build business dashboards
-- Communicate actionable insights
+- Analyze shipping performance
+- Analyze monthly trends
+- Load data into PostgreSQL
+- Write business-focused SQL queries
+- Compare Python and PostgreSQL results
+- Identify loss-making areas
+- Prepare data for Power BI reporting
 
 ---
 
-# Author
+# 🚀 Key Analytical Takeaway
+
+The project demonstrates an important business principle:
+
+```text
+High Sales
+      ↓
+does not necessarily mean
+      ↓
+High Profit
+```
+
+Therefore, the analysis evaluates multiple dimensions together:
+
+```text
+Sales
++
+Discount
++
+Profit
++
+Profit Margin
++
+Customers
++
+Products
++
+Regions
++
+Shipping
++
+Time
+```
+
+This provides a more complete view of sales performance and profitability than revenue analysis alone.
+
+---
+
+# 👤 Author
 
 ## Uveshkhan Lohani
 
@@ -614,18 +1615,57 @@ This project demonstrates how a Data Analyst can:
 Focused on building practical expertise in:
 
 - Data Analytics
-- Excel
+- Python
 - SQL
 - PostgreSQL
 - Power BI
+- Microsoft Excel
 - Business Intelligence
+- Data Visualization
 
 ---
 
-# Connect
+# 🔗 Connect
+
+**GitHub:**  
+https://github.com/Uveshkhan2005
 
 **LinkedIn:**  
 https://www.linkedin.com/in/uveshkhan-lohani-615793273/
 
 **Email:**  
 uveshkhanlohani65@gmail.com
+
+---
+
+# 📌 Portfolio Project
+
+This project is part of my Data Analytics portfolio and demonstrates an end-to-end analytical workflow:
+
+```text
+Data
+ ↓
+Validation
+ ↓
+Cleaning
+ ↓
+Feature Engineering
+ ↓
+Python
+ ↓
+PostgreSQL
+ ↓
+SQL
+ ↓
+Business Analysis
+ ↓
+Power BI
+ ↓
+Decision Support
+```
+
+---
+
+## ⭐ Project Focus
+
+**Sales Performance + Profitability + Customer Analysis + Product Analysis + Regional Analysis + Business Intelligence**
