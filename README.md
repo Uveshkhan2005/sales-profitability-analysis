@@ -1242,8 +1242,6 @@ The third page focuses on high-profit products, loss-making products, loss-makin
 
 ## 🎥 Dashboard Demo
 
-A dashboard demonstration can be included in the repository's `visuals/` folder if a recording has been added.
-
 The demo is intended to show:
 
 - Navigation across all three Power BI pages
